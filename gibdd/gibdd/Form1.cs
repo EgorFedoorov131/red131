@@ -9,17 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace WindowsFormsApp1
+namespace gibdd
 {
-    public partial class auth : Form
+    public partial class Form1 : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=303-16\\SQLSERVER; Initial Catalog=gibdd; Integrated Security=true;");
-
-        public auth()
+        public Form1()
         {
             InitializeComponent();
         }
 
+        SqlConnection con = new SqlConnection("Data Source=303-16\\SQLSERVER; Initial Catalog=driverlist; Integrated Security=true;");
         private void auth_Load(object sender, EventArgs e)
         {
 
@@ -42,21 +41,20 @@ namespace WindowsFormsApp1
                         Properties.Settings.Default.time = DateTime.UtcNow.AddMinutes(1);
                         Properties.Settings.Default.attempts = 0;
                         button1.Enabled = false;
-                    
+
                     }
                 }
                 MessageBox.Show("bad");
             }
             con.Close();
-            
+
         }
         private void timer1_Tick(object sender, EventArgs e)
-        {   
+        {
             if (Properties.Settings.Default.time <= DateTime.UtcNow)
             {
                 button1.Enabled = true;
             }
-        }    
-
+        }
     }
 }
