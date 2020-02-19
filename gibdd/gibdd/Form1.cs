@@ -42,6 +42,7 @@ namespace gibdd
                 }
                 MessageBox.Show("bad");
             }
+            Properties.Settings.Default.Save();
             con.Close();
         }
 
