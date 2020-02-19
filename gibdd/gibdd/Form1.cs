@@ -13,21 +13,17 @@ namespace gibdd
 {
     public partial class Form1 : Form
     {
+        SqlConnection con = new SqlConnection("Data Source=303-16; Initial Catalog=driverlist; Integrated Security=true;");
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        SqlConnection con = new SqlConnection("Data Source=303-16\\SQLSERVER; Initial Catalog=driverlist; Integrated Security=true;");
-        private void auth_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand com = new SqlCommand($"Select login FROM usrers WHERE login = '{textBox1.Text}' and pass = '{textBox2.Text}'", con);
+            SqlCommand com = new SqlCommand($"SELECT login FROM Users where login = '{textBox1.Text}' and pasword = '{textBox2.Text}'", con);
             SqlDataReader dr = com.ExecuteReader();
             if (dr.HasRows)
                 MessageBox.Show("good");
@@ -47,8 +43,8 @@ namespace gibdd
                 MessageBox.Show("bad");
             }
             con.Close();
-
         }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (Properties.Settings.Default.time <= DateTime.UtcNow)

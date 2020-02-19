@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{960298D0-18CD-4C84-B829-9FA11A1DA082}</ProjectGuid>
+    <ProjectGuid>{9F7D80E6-9D5A-4880-BE15-D50895E6C594}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>gibdd</RootNamespace>
     <AssemblyName>gibdd</AssemblyName>

@@ -25,17 +25,6 @@ namespace gibdd.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.DateTime time {
-            get {
-                return ((global::System.DateTime)(this["time"]));
-            }
-            set {
-                this["time"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int attempts {
             get {
@@ -43,6 +32,17 @@ namespace gibdd.Properties {
             }
             set {
                 this["attempts"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime time {
+            get {
+                return ((global::System.DateTime)(this["time"]));
+            }
+            set {
+                this["time"] = value;
             }
         }
     }
